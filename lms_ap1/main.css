@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+
+  .nav-superior {
+    width: 100%;
+  }
+  
+  .nav-superior ul {
+    background-color: violet; 
+    display: flex; 
+    gap: 20px; 
+    list-style: none; 
+    padding: 20px;
+  }
+
+  .nav-button-superior {
+    padding: 5px 10px; 
+    background-color: lavender;
+    border-radius: 6px;
+    border: none;
+  }
+  
+  .nav-button-superior:hover{
+    background-color: pink;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-grid;
+  }
+    
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+    border: 1px solid;
+    margin-top: 28px;
+  }
+  
+  .dropdown:active .dropdown-content {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: 2px 3px 1px;
+    transform: translate(4px, 6px);
+  }
+
+  .nav-button-superior:active {
+    color: black;
+    box-shadow: 3px 7px 5px;
+    transition: transform 400ms, box-shadow 400ms;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .nav-esquerdo {
+    height: 1200px;
+    width: 20vw;
+  }
+  
+  .nav-esquerdo ul {
+    display: flex;
+    flex-direction: column;
+    background-color: hotpink;
+    gap: 20px; 
+    list-style: none; 
+    padding: 20px;
+  }
+  
+  .content {
+    height: 1200px;
+    width: 80vw;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 30px;
+  }
+
+  .content section {
+    padding: 0 30px;
+  }
+
+  .content h1 {
+    padding-top: 30px;
+  }
+
+  .loader {
+    width: 100px; /* define a largura */
+    height: 100px; /* define a altura */
+    border-radius: 50%; /* define o raio da borda como um círculo */
+    display: inline-block; /* define o display inline block para não quebrar linha */
+    border-top: 3px solid violet; /* define a borda com cor */
+    border-right: 3px solid transparent; /* define a borda transparente para dar o efeito do loading */
+    box-sizing: border-box; /* granrte a espessura da borda */
+    animation: rotation 1s linear infinite; /* aplica a animação de loop */
+  }
+  
+  @keyframes rotation { /* especifica como o spinner deve se comportar, ou seja, inicia dos 0 graus e chega a uma volta completa de 360 graus */
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+  @media screen and (max-width:600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container .nav-esquerdo {
+        width: 100%;
+        height: auto;
+    }
+  }
